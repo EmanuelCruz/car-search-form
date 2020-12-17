@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Cars</h1>
+        </header>
+        <hr id="hr-1">
+        <div class="container__main">
+            <section class="section search">
+                <form action="" class="form__search">
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Marca</label>
+                        <select id="brand" name="brand" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="Audi">Audi</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Mercedes Benz">Mercedes Benz</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Dodge">Dodge</option>
+                        </select>
+                    </div>
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Año</label>
+                        <select id="year" name="year" class="form__select">
+                            <option value="">Seleccione</option>
+                        </select>
+                    </div>
+                    <div class="form__element">
+                        <label for="" class="form__label">Precio Min</label>
+                        <select id="min-price" name="min-price" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="20000">20000</option>
+                            <option value="30000">30000</option>
+                            <option value="40000">40000</option>
+                            <option value="50000">50000</option>
+                            <option value="60000">60000</option>
+                            <option value="70000">70000</option>
+                            <option value="80000">80000</option>
+                            <option value="90000">90000</option>
+                        </select>
+                    </div>
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Precio Max</label>
+                        <select id="max-price" name="max-price" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="20000">20000</option>
+                            <option value="30000">30000</option>
+                            <option value="40000">40000</option>
+                            <option value="50000">50000</option>
+                            <option value="60000">60000</option>
+                            <option value="70000">70000</option>
+                            <option value="80000">80000</option>
+                            <option value="90000">90000</option>
+                        </select>
+                    </div>
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Puertas</label>
+                        <select id="doors" name="doors" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Transmisión</label>
+                        <select id="transmission" name="transmission" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="Automatico">Automatico</option>
+                            <option value="Manual">Manual</option>
+                        </select>
+                    </div>
+
+                    <div class="form__element">
+                        <label for="" class="form__label">Color</label>
+                        <select id="colour" name="colour" class="form__select">
+                            <option value="">Seleccione</option>
+                            <option value="Azul">Azul</option>
+                            <option value="Blanco">Blanco</option>
+                            <option value="Negro">Negro</option>
+                            <option value="Rojo">Rojo</option>
+                        </select>
+                    </div>
+
+                </form>
+            </section>
+            <hr id="hr-2">
+            <section class="section results">
+                <div class="group-cards">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <template id="template-card">
+        <div class="card">
+            <section class="card__section">
+                <header class="card__header">
+                    <p class="card__brand">BMW <span class="card__model">Serie 3</span></p>
+                    <p class="card__year">2020</p>
+                </header>
+                <p class="card__price"><span>$</span>30.000</p>
+            </section>
+            <div class="details">
+                <img src="./assets/icons/chevron-double.svg" alt="" class="details__icon">
+                <ul class="ul info">
+                    <li class="li info__doors"><span>Puertas: </span>4</li>
+                    <li class="li info__colour"><span>Color: </span>Blanco</li>
+                    <li class="li info__transmission"><span>Transmisión: </span>automatico</li>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <template id="template-select-year">
+        <option value="year">year</option>
+    </template>
+
+    <script src="./js/index.js " type="module"></script>
+</body>
+
+</html>
