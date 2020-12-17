@@ -19,6 +19,51 @@ body {
   min-height: 100vh;
   font-family: var(--font-primary);
 }
+.container {
+  margin: 10px;
+}
+hr {
+  border-color: #71c9ce;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+.header {
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: var(--font-bold);
+}
+.search {
+  margin: 10px 5%;
+}
+.form__search {
+  display: flex;
+  flex-direction: column;
+}
+.form__element {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.form__label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.form__select {
+  height: 45px;
+  border: white 2px solid;
+  border-radius: 4px;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+.form__select:focus {
+  border: 2px solid var(--color-button);
+  outline-style: none;
+}
+.section {
+  margin: 10px 0px;
+}
+
 
 
 @font-face {
