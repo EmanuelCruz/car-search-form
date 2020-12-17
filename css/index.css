@@ -1,0 +1,26 @@
+:root {
+  --color-bg: #e3fdfd;
+  --color-primary: #cbf1f5;
+  --color-dark: #000000;
+  --bg-price: #00e5ff79;
+  --color-button: #71c9ce;
+  --color-select: #bdbdbd;
+  --font-primary: "Sunflower-Light";
+  --font-bold: "Sunflower-Bold";
+  --color-text-card: white;
+}
+
+
+
+@font-face {
+  font-family: "Sunflower-Light";
+  src: url("../assets/fonts/Sunflower-Light.ttf");
+}
+@font-face {
+  font-family: "Sunflower-Medium";
+  src: url("../assets/fonts/Sunflower-Medium.ttf");
+}
+@font-face {
+  font-family: "Sunflower-Bold";
+  src: url("../assets/fonts/Sunflower-Bold.ttf");
+}
