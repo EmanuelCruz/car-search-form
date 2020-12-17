@@ -19,15 +19,13 @@ body {
   min-height: 100vh;
   font-family: var(--font-primary);
 }
-.container {
-  margin: 10px;
-}
 hr {
-  border-color: #71c9ce;
+  border-color: var(--color-button);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 }
 .header {
   margin-bottom: 10px;
+  padding-top: 10px;
 }
 h1 {
   font-family: var(--font-bold);
@@ -181,12 +179,12 @@ h1 {
 
 @media (min-width: 426px) { /*tablet*/
   .container {
-    margin: 10px 15%;
+    margin: 0px 15%;
   }
 }
 @media (min-width: 769px) { /*laptop*/
   .container {
-    margin: 10px 5%;
+    margin: 0px 5%;
   }
   .container__main {
     display: flex;
@@ -200,12 +198,13 @@ h1 {
     width: 60%;
   }
   #hr-2 {
-    margin-top: 20px;
+    border-color: rgb(255, 255, 255);
+    box-shadow: none;
   }
 }
 @media (min-width: 1441px) {
   .container {
-    margin: 10px 20%;
+    margin: 0px 20%;
   }
 }
 
