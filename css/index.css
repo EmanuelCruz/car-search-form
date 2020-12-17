@@ -179,7 +179,35 @@ h1 {
   opacity: 1;
 }
 
-
+@media (min-width: 426px) { /*tablet*/
+  .container {
+    margin: 10px 15%;
+  }
+}
+@media (min-width: 769px) { /*laptop*/
+  .container {
+    margin: 10px 5%;
+  }
+  .container__main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .search {
+    width: 30%;
+  }
+  .results {
+    width: 60%;
+  }
+  #hr-2 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1441px) {
+  .container {
+    margin: 10px 20%;
+  }
+}
 
 @font-face {
   font-family: "Sunflower-Light";
