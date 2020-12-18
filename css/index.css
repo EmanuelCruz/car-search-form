@@ -4,11 +4,11 @@
   --color-dark: #000000;
   --bg-price: #00e5ff79;
   --color-button: #71c9ce;
-  --color-select: #bdbdbd;
-  --font-primary: "Sunflower-Light";
-  --font-bold: "Sunflower-Bold";
   --color-text-card: white;
   --color-select: white;
+  --color-msj-error: grey;
+  --font-primary: "Sunflower-Light";
+  --font-bold: "Sunflower-Bold";
 }
 @font-face {
   font-family: "Sunflower-Light";
@@ -100,7 +100,7 @@ h1 {
   align-items: center;
 }
 .card__msj {
-  color: var(--color-select);
+  color: var(--color-msj-error);
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 1.5px;
