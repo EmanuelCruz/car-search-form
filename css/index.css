@@ -9,7 +9,19 @@
   --font-bold: "Sunflower-Bold";
   --color-text-card: white;
 }
+@font-face {
+  font-family: "Sunflower-Light";
+  src: local("Pacifico Regular"), local("Pacifico-Regular"),
+    url("../assets/fonts/Sunflower-Light.ttf");
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Sunflower-Bold";
+  src: local("Pacifico Regular"), local("Pacifico-Regular"),
+    url("../assets/fonts/Sunflower-Bold.ttf");
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +30,9 @@ body {
   background-color: white;
   min-height: 100vh;
   font-family: var(--font-primary);
+}
+.container {
+  margin: 0px 5%;
 }
 hr {
   border-color: var(--color-button);
@@ -67,6 +82,8 @@ h1 {
   flex-direction: column;
 }
 .card {
+  width: auto;
+  height: auto;
   margin: 10px 0px;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -116,7 +133,8 @@ h1 {
 }
 .details__icon {
   padding: 0px 15px;
-  width: 20px;
+  width: 15px;
+  height: 100%;
   display: inline-block;
   backdrop-filter: blur(1px);
   transition: all 0.6s ease;
@@ -206,17 +224,4 @@ h1 {
   .container {
     margin: 0px 20%;
   }
-}
-
-@font-face {
-  font-family: "Sunflower-Light";
-  src: url("../assets/fonts/Sunflower-Light.ttf");
-}
-@font-face {
-  font-family: "Sunflower-Medium";
-  src: url("../assets/fonts/Sunflower-Medium.ttf");
-}
-@font-face {
-  font-family: "Sunflower-Bold";
-  src: url("../assets/fonts/Sunflower-Bold.ttf");
 }
