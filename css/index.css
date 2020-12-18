@@ -6,7 +6,7 @@
   --color-button: #71c9ce;
   --color-text-card: white;
   --color-select: white;
-  --color-msj-error: grey;
+  --color-msj-error: rgb(49, 49, 49);
   --font-primary: "Sunflower-Light";
   --font-bold: "Sunflower-Bold";
 }
