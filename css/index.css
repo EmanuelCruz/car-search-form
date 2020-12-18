@@ -8,19 +8,11 @@
   --color-select: white;
   --color-msj-error: rgb(49, 49, 49);
   --font-primary: "Sunflower-Light";
-  --font-bold: "Sunflower-Bold";
 }
 @font-face {
   font-family: "Sunflower-Light";
   src: local("Pacifico Regular"), local("Pacifico-Regular"),
     url("../assets/fonts/Sunflower-Light.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Sunflower-Bold";
-  src: local("Pacifico Regular"), local("Pacifico-Regular"),
-    url("../assets/fonts/Sunflower-Bold.ttf");
   font-display: swap;
 }
 * {
@@ -44,7 +36,7 @@ hr {
   padding-top: 10px;
 }
 h1 {
-  font-family: var(--font-bold);
+  font-weight: bolder;
 }
 .search {
   margin: 10px 5%;
@@ -61,6 +53,7 @@ h1 {
 .form__label {
   font-size: 16px;
   margin-bottom: 5px;
+  font-weight: 600;
 }
 .form__select {
   height: 45px;
@@ -120,7 +113,7 @@ h1 {
   width: 200px;
 }
 .card__brand {
-  font-family: var(--font-bold);
+  font-weight: bold;
   font-size: 20px;
 }
 .details {
@@ -148,7 +141,7 @@ h1 {
   padding: 8px;
   border-radius: 4px;
   color: white;
-  font-family: var(--font-bold);
+  font-weight: bold;
   cursor: pointer;
 }
 .info {
