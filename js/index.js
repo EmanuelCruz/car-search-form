@@ -1,22 +1,22 @@
 import {autos} from './db.js';
 
 const $selectBrand = document.getElementById('brand')
-const $selectYear = document.getElementById('year')
 const $selectMinPrice = document.getElementById('min-price')
 const $selectMaxPrice = document.getElementById('max-price')
 const $selectDoors = document.getElementById('doors')
 const $selectTransmission = document.getElementById('transmission')
 const $selectColour = document.getElementById('colour')
 
-const $groupCards = document.querySelector('.group-cards')
 const $templateCard = document.getElementById('template-card').content
+const $groupCards = document.querySelector('.group-cards')
 const fragment = document.createDocumentFragment()
 
 const $templateSelectYear = document.getElementById('template-select-year').content
+const $selectYear = document.getElementById('year')
 const fragmentSelect = document.createDocumentFragment()
 const currentYear = new Date().getFullYear()
 
-const searchData = {
+let searchData = {
     brand : '',
     year : '',
     minPrice : '',
@@ -27,9 +27,15 @@ const searchData = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    showCars(autos);
+    fillSelectYear()
+    if(!localStorage.getItem('searchData')) {
+        showCars(autos);
+    } else {
+        searchData = JSON.parse(localStorage.getItem('searchData'))
+        completeAllSelects()
+        showCars(filterResults());
+    }
     toggleDetails()
-    fillSelects()
     eventosSelects()
 });
 
@@ -41,22 +47,22 @@ function eventosSelects() {
         showCars(filteredCars);
     })
     $selectYear.addEventListener('change',e=>{
-        searchData.year = Number(e.target.value)
+        searchData.year = e.target.value
         const filteredCars = filterResults()
         showCars(filteredCars);
     })
     $selectMinPrice.addEventListener('change',e=>{
-        searchData.minPrice = Number(e.target.value)
+        searchData.minPrice = e.target.value
         const filteredCars = filterResults()
         showCars(filteredCars);
     })
     $selectMaxPrice.addEventListener('change',e=>{
-        searchData.maxPrice = Number(e.target.value)
+        searchData.maxPrice = e.target.value
         const filteredCars = filterResults()
         showCars(filteredCars);
     })
     $selectDoors.addEventListener('change',e=>{
-        searchData.doors = Number(e.target.value)
+        searchData.doors = e.target.value
         const filteredCars = filterResults()
         showCars(filteredCars);
     })
@@ -107,29 +113,32 @@ function toggleDetails() {
     document.addEventListener('click',(e)=>{
         if (e.target.matches('.details__icon')) {
             e.target.nextElementSibling.classList.add('move-left')
-            e.target.classList.toggle('hidden')
+            e.target.classList.add('hidden')
         } else if (e.target.matches('.info')) {
-            e.target.previousElementSibling.classList.toggle('hidden')
             e.target.classList.remove('move-left')
+            e.target.previousElementSibling.classList.remove('hidden')
         }
     })
 }
 
-function fillSelects() {
+function fillSelectYear() {
     for (let index = 0; index < 10; index++) {
         let year = currentYear-index
+        console.log(typeof year)
         $templateSelectYear.querySelector('option').innerHTML = year
         $templateSelectYear.querySelector('option').setAttribute('value',year)
-
         const $option = $templateSelectYear.cloneNode(true)
         fragmentSelect.appendChild($option)
     }
     $selectYear.appendChild(fragmentSelect)
+    console.log($selectYear)
+    console.log(searchData)
 }
 
 //=============================================FILTRADO DE AUTOS=============================================
 function filterResults() {
     const result = autos.filter(filterBrand).filter(filterYear).filter(filterMinPrice).filter(filterMaxPrice).filter(filterDoors).filter(filterTransmission).filter(filterColour)
+    localStorage.setItem('searchData',JSON.stringify(searchData))
     return result
 }
 
@@ -142,28 +151,28 @@ function filterBrand(auto) {
 
 function filterYear(auto) {
     if (searchData.year) {
-        return auto.year === searchData.year
+        return auto.year === Number(searchData.year)
     }
     return auto
 }
 
 function filterMinPrice(auto) {
     if (searchData.minPrice) {
-        return auto.price >= searchData.minPrice
+        return auto.price >= Number(searchData.minPrice)
     }
     return auto
 }
 
 function filterMaxPrice(auto) {
     if (searchData.maxPrice) {
-        return auto.price <= searchData.maxPrice
+        return auto.price <= Number(searchData.maxPrice)
     }
     return auto
 }
 
 function filterDoors(auto) {
     if (searchData.doors) {
-        return auto.doors === searchData.doors
+        return auto.doors === Number(searchData.doors)
     }
     return auto
 }
@@ -180,4 +189,15 @@ function filterColour(auto) {
         return auto.colour === searchData.colour
     }
     return auto
+}
+
+//=============================================Local Storage=============================================
+function completeAllSelects() {
+    $selectBrand.value = searchData.brand
+    $selectYear.value = searchData.year
+    $selectMinPrice.value = searchData.minPrice
+    $selectMaxPrice.value = searchData.maxPrice
+    $selectDoors.value = searchData.doors
+    $selectTransmission.value = searchData.transmission
+    $selectColour.value = searchData.colour
 }
